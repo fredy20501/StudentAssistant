@@ -25,17 +25,17 @@ public class testDriver3{
 
 		}
 		System.out.println(one);
-		if(two.getCourse(0)==null){
+		if(two.getItem(0)==null){
 			System.out.println("2 is empty");
 		}
-		if(one.getCourse(0)==null){
+		if(one.getItem(0)==null){
 			System.out.println("1 is empty");
 		}
 		else
 			System.out.println("1 is not empty");
-		Course three=one.getCourseByName("Course0");
+		Course three=one.getItemByName("Course0");
 		System.out.println(three);
-		Course four=one.getCourseByName("Coursez");
+		Course four=one.getItemByName("Coursez");
 		System.out.println(four);
 		if(one.contains(three)){
 			System.out.println("one contains three");

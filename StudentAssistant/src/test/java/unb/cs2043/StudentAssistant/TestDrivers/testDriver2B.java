@@ -25,7 +25,7 @@ public class testDriver2B{
 		System.out.println(one.getFormattedString());
 		
 		//Changing name of a course using the copied list
-		ArrayList<Course> two=one.copyCourses();
+		ArrayList<Course> two=one.copyList();
 		two.get(0).setName("Testing");
 		
 		//Printing schedule one again (course name has changed!)

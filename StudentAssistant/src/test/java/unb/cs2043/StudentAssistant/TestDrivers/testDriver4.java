@@ -41,7 +41,7 @@ public class testDriver4{
 			for(int y=0;y<numSections;y++){
 				Section temp2=new Section(Tye.next());
 				Tye.nextLine();
-				one.getCourse(index).add(temp2);
+				one.getItem(index).add(temp2);
 //see below				int index2=one.getCourse(index).indexOf(temp2);
 				int numTimes=Tye.nextInt();
 				Tye.nextLine();
@@ -52,19 +52,19 @@ public class testDriver4{
 			}
 
 		}
-		Course course0=one.getCourse(0);
-		Course courseMid=one.getCourse(one.getSize()/2);
-		Course courseMax=one.getCourse(one.getSize()-1);
-		Section section0=courseMax.getSection(0);
-		Section sectionMid=courseMax.getSection(courseMax.getSize()/2);
-		Section sectionMax=courseMax.getSection(courseMax.getSize()-1);
+		Course course0=one.getItem(0);
+		Course courseMid=one.getItem(one.getSize()/2);
+		Course courseMax=one.getItem(one.getSize()-1);
+		Section section0=courseMax.getItem(0);
+		Section sectionMid=courseMax.getItem(courseMax.getSize()/2);
+		Section sectionMax=courseMax.getItem(courseMax.getSize()-1);
 
 		//Tests schedule
 		System.out.println("----TESTING SCHEDULE CLASS:----\n"+one.getSize());
 		System.out.println(one);
-		System.out.println(one.getCourseByName(course0.getName()));
-		System.out.println(one.getCourseByName(courseMid.getName()));
-		System.out.println(one.getCourseByName(courseMax.getName()));
+		System.out.println(one.getItemByName(course0.getName()));
+		System.out.println(one.getItemByName(courseMid.getName()));
+		System.out.println(one.getItemByName(courseMax.getName()));
 		System.out.println(one.indexOf(course0)+", "+one.indexOf(courseMid)+", "+one.indexOf(courseMax));
 		System.out.println(one.indexOf(course0.getName())+", "+one.indexOf(courseMid.getName())+", "+one.indexOf(courseMax.getName()));
 		System.out.println(one.lastIndexOf(course0)+", "+one.lastIndexOf(courseMid)+", "+one.lastIndexOf(courseMax));
@@ -85,21 +85,21 @@ public class testDriver4{
 		one.remove(0);
 		one.remove(courseMid);
 		System.out.println(one);
-		one.replace(courseMax,course0);
-		System.out.println(one);
-		one.replace("CS2043",courseMid);
-		System.out.println(one);
-		one.replace(one.getSize()/2,courseMax);
-		System.out.println(one);
+//		one.replace(courseMax,course0);
+//		System.out.println(one);
+//		one.replace("CS2043",courseMid);
+//		System.out.println(one);
+//		one.replace(one.getSize()/2,courseMax);
+//		System.out.println(one);
 		one.clear();
 		System.out.println(one);
 
 		//Tests Course
 		System.out.println("----TESTING COURSE CLASS:----\n"+courseMax.getSize());
 		System.out.println(courseMax);
-		System.out.println(courseMax.getSectionByName(section0.getName()));
-		System.out.println(courseMax.getSectionByName(sectionMid.getName()));
-		System.out.println(courseMax.getSectionByName(sectionMax.getName()));
+		System.out.println(courseMax.getItemByName(section0.getName()));
+		System.out.println(courseMax.getItemByName(sectionMid.getName()));
+		System.out.println(courseMax.getItemByName(sectionMax.getName()));
 		System.out.println(courseMax.indexOf(section0)+", "+courseMax.indexOf(sectionMid)+", "+courseMax.indexOf(sectionMax));
 		System.out.println(courseMax.indexOf(section0.getName())+", "+courseMax.indexOf(sectionMid.getName())+", "+courseMax.indexOf(sectionMax.getName()));
 		System.out.println(courseMax.lastIndexOf(section0)+", "+courseMax.lastIndexOf(sectionMid)+", "+courseMax.lastIndexOf(sectionMax));
@@ -120,12 +120,12 @@ public class testDriver4{
 		courseMax.remove(0);
 		courseMax.remove(sectionMid);
 		System.out.println(courseMax);
-		courseMax.replace(sectionMax,section0);
-		System.out.println(courseMax);
-		courseMax.replace("1A",sectionMid);
-		System.out.println(courseMax);
-		courseMax.replace(courseMax.getSize()/2,sectionMax);
-		System.out.println(courseMax);
+//		courseMax.replace(sectionMax,section0);
+//		System.out.println(courseMax);
+//		courseMax.replace("1A",sectionMid);
+//		System.out.println(courseMax);
+//		courseMax.replace(courseMax.getSize()/2,sectionMax);
+//		System.out.println(courseMax);
 		courseMax.clear();
 		System.out.println(courseMax);
 		Tye.close();

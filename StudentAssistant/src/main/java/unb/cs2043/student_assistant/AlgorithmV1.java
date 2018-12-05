@@ -36,7 +36,7 @@ public class AlgorithmV1 {
 		//Initialize integer arrays
 		for (int i=0; i<indexes.length; i++) {
 			indexes[i] = 0;
-			maxIndexes[i] = courseList.getCourse(i).getSize()-1;
+			maxIndexes[i] = courseList.getItem(i).getSize()-1;
 			courseNums[i] = i;
 		}
 		
@@ -56,8 +56,8 @@ public class AlgorithmV1 {
 		    	Schedule currentSchedule = new Schedule("S"+numSchedules);
 		    	
 				for (int i:courseIndexes) {
-					Course currentCourse = courseList.getCourse(i);
-					Section sectionToAdd = currentCourse.getSection(indexes[i]);
+					Course currentCourse = courseList.getItem(i);
+					Section sectionToAdd = currentCourse.getItem(indexes[i]);
 					
 					if (noConflictsBetween(currentSchedule, sectionToAdd)) {
 						//Add section to currentSchedule (need a new course to hold it)
@@ -99,7 +99,7 @@ public class AlgorithmV1 {
 		long result = 1;
 		
 		for (int i=0; i<courseList.getSize(); i++) {
-			Course currentCourse = courseList.getCourse(i);
+			Course currentCourse = courseList.getItem(i);
 			result *= currentCourse.getSize();
 		}
 		result--;
@@ -157,9 +157,9 @@ public class AlgorithmV1 {
 		boolean noConflicts = true;
 		
 		for (int i=0; i<schedule.getSize() && noConflicts; i++) {
-			Course currentCourse = schedule.getCourse(i);
+			Course currentCourse = schedule.getItem(i);
 			for (int j=0; j<currentCourse.getSize() && noConflicts; j++) {
-				Section currentSection = currentCourse.getSection(j);
+				Section currentSection = currentCourse.getItem(j);
 				noConflicts = !currentSection.conflictsWith(section);
 			}
 		}

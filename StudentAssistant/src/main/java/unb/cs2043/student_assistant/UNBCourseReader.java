@@ -586,22 +586,22 @@ public class UNBCourseReader {
 		Section compressedSection;
 		
 		for (int i=0; i<courseList.getSize(); i++) {
-			Course currentCourse = courseList.getCourse(i);
-			Course compressedCourse = new Course(courseList.getCourse(i).getName());
+			Course currentCourse = courseList.getItem(i);
+			Course compressedCourse = new Course(courseList.getItem(i).getName());
 			compressedCourse.setFullName(currentCourse.getFullName());
 			
 			if (currentCourse.getSize()>1) {
 				
 				for (int j=0; j<currentCourse.getSize(); j++) {
-					compressedSection = new Section(currentCourse.getSection(j));
-					String start = currentCourse.getSection(j).getName();
+					compressedSection = new Section(currentCourse.getItem(j));
+					String start = currentCourse.getItem(j).getName();
 					
 					String end = "";
 					boolean stop = false;
 					int k;		
 					for (k=j+1; k<currentCourse.getSize() && !stop; k++) {
-						Section currentSection = currentCourse.getSection(k);
-						if (compressedSection.sameClassTimes(currentCourse.getSection(k))) {
+						Section currentSection = currentCourse.getItem(k);
+						if (compressedSection.sameClassTimes(currentCourse.getItem(k))) {
 							end = getSectionNumber(currentSection.getName(), false, true);
 							if (k==currentCourse.getSize()-1) {
 								j = k;
@@ -635,21 +635,21 @@ public class UNBCourseReader {
 		
 		Section compressedSection;
 		for (int i=0; i<courseList.getSize(); i++) {
-			Course currentCourse = courseList.getCourse(i);
-			Course compressedCourse = new Course(courseList.getCourse(i).getName());
+			Course currentCourse = courseList.getItem(i);
+			Course compressedCourse = new Course(courseList.getItem(i).getName());
 			compressedCourse.setFullName(currentCourse.getFullName());
 			
 			if (currentCourse.getSize()>1) {
 				ArrayList<Integer> addedSections = new ArrayList<>(currentCourse.getSize());
 				for (int j=0; j<currentCourse.getSize() && !addedSections.contains(j); j++) {
-					compressedSection = new Section(currentCourse.getSection(j));
-					String currName = currentCourse.getSection(j).getName();
+					compressedSection = new Section(currentCourse.getItem(j));
+					String currName = currentCourse.getItem(j).getName();
 					String newName = getSectionNumber(currName, true, false);
 					
 					addedSections.add(j);
 					for (int k=j+1; k<currentCourse.getSize(); k++) {
-						Section currentSection = currentCourse.getSection(k);
-						if (compressedSection.sameClassTimes(currentCourse.getSection(k))) {
+						Section currentSection = currentCourse.getItem(k);
+						if (compressedSection.sameClassTimes(currentCourse.getItem(k))) {
 							currName = currentSection.getName();
 							newName += ","+getSectionNumber(currName, false, false);
 							addedSections.add(k);

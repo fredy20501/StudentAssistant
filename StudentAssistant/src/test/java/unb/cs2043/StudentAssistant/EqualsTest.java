@@ -10,7 +10,7 @@ import unb.cs2043.student_assistant.Section;
 
 /**
  * Tests the equals() method of schedule.
- * @author frede
+ * @author Frederic Verret
  */
 public class EqualsTest {
 	
@@ -24,8 +24,8 @@ public class EqualsTest {
 		
 		assertEquals(false, sc==sc2);
 		assertEquals(true, sc.equals(sc2));
-		assertEquals(false, sc.copyCourses()==sc2.copyCourses());
-		assertEquals(true, sc.copyCourses().equals(sc2.copyCourses()));
+		assertEquals(false, sc.copyList()==sc2.copyList());
+		assertEquals(true, sc.copyList().equals(sc2.copyList()));
 		
 		Schedule sc3 = new Schedule("");
 		assertEquals(false, sc.equals(sc3));
@@ -44,8 +44,8 @@ public class EqualsTest {
 		
 		assertEquals(false, c1==c2);
 		assertEquals(true, c1.equals(c2));
-		assertEquals(false, c1.copySections()==c2.copySections());
-		assertEquals(true, c1.copySections().equals(c2.copySections()));
+		assertEquals(false, c1.copyList()==c2.copyList());
+		assertEquals(true, c1.copyList().equals(c2.copyList()));
 		
 		Course c4 = new Course("");
 		assertEquals(false, c1.equals(c4));

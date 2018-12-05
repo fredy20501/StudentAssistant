@@ -41,7 +41,7 @@ public class AddEditSectionController implements javafx.fxml.Initializable {
 			if (event.getCode() ==  KeyCode.ESCAPE) closeWindow(new ActionEvent());
 		});
 		
-		cmbCourse.setItems(FXCollections.observableList(App.userSelection.copyCourses()));
+		cmbCourse.setItems(FXCollections.observableList(App.userSelection.copyList()));
 		cmbCourse.setCellFactory(e -> new ComboBoxCourseCell());
 		
 	}
@@ -86,7 +86,7 @@ public class AddEditSectionController implements javafx.fxml.Initializable {
 			}
 			else {
 				//Check if a section of this course already has that name
-				if (cmbCourse.getSelectionModel().getSelectedItem().getSectionByName(sectionName) != null) {
+				if (cmbCourse.getSelectionModel().getSelectedItem().getItemByName(sectionName) != null) {
 					App.showNotification("Section "+sectionName+" already exists for this course.", AlertType.ERROR);
 					return;
 				}

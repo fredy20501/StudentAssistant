@@ -235,7 +235,7 @@ public class ScheduleArrangerTest {
 		
 		//Remove a conflict one by one and print time
 		for (int i=0; i<randomIndexesA.length; i++) {
-			schedule.getCourse(randomIndexesA[i]).getSection(0).getClassTime(0).setDays(new ArrayList<>(Arrays.asList("Day"+i)));
+			schedule.getItem(randomIndexesA[i]).getItem(0).getItem(0).setDays(new ArrayList<>(Arrays.asList("Day"+i)));
 			
 			ScheduleArranger.getBestSchedules(schedule, 2, true);
 		}

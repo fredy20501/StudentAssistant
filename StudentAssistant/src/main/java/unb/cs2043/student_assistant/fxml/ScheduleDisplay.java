@@ -129,8 +129,8 @@ public class ScheduleDisplay extends SpreadsheetView {
     
 	private void populateGrid(GridBase grid) {
 		
-		for(Course course : schedule.copyCourses()) {
-			for(ClassTime time : course.getSection(0).copyClassTimes()) {
+		for(Course course : schedule.copyList()) {
+			for(ClassTime time : course.getItem(0).copyList()) {
 				List<Integer> columnIndex = getColumnIndex(time);
 				int rowIndex = getRowIndex(time);
 				for(Integer col : columnIndex) { 
@@ -139,11 +139,11 @@ public class ScheduleDisplay extends SpreadsheetView {
 					
 					VBox teste = new VBox();
 					teste.setStyle("spreadsheet.css");
-					teste.getStyleClass().add("style" + (schedule.copyCourses().indexOf(course)%5));
+					teste.getStyleClass().add("style" + (schedule.copyList().indexOf(course)%5));
 					
-					String labelText = course.getName() + "\n" + course.getSection(0) + " - " + time.getType();
+					String labelText = course.getName() + "\n" + course.getItem(0) + " - " + time.getType();
 					Label lbl1 = new Label(labelText);
-					lbl1.getStyleClass().add("style" + (schedule.copyCourses().indexOf(course)%5));
+					lbl1.getStyleClass().add("style" + (schedule.copyList().indexOf(course)%5));
 					lbl1.setStyle("spreadsheet.css");
 					teste.getChildren().add(lbl1);
 					

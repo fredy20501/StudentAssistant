@@ -5,7 +5,10 @@ import javafx.stage.Window;
 import javafx.stage.FileChooser;
 import javafx.stage.FileChooser.ExtensionFilter;
 
-// Uses JavaFX to display a new window prompting the user to select a file to load.
+/**
+ * Uses JavaFX to display a new window prompting the user to select a file to load.
+ * @author Alexandre Carvalho
+ */
 public class FileSelect {
 	private File file;
 	private FileChooser fileChooser = new FileChooser();

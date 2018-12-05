@@ -10,7 +10,7 @@ import java.util.ArrayList;
 public class testDriver2{
 	public static void main(String[] args){
 		Schedule one=new Schedule("Jane's Winter 2019");
-		ArrayList<Course> two=one.copyCourses();
+		ArrayList<Course> two=one.copyList();
 		Course temp;
 		Section temp1;
 		ClassTime temp2=null;
@@ -25,6 +25,6 @@ public class testDriver2{
 		}
 		System.out.println(one.getFormattedString());
 		System.out.println(two);
-		System.out.println(one.copyCourses());
+		System.out.println(one.copyList());
 	}
 }

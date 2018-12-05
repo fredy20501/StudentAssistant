@@ -86,12 +86,12 @@ public class AddEditClassTimeController implements javafx.fxml.Initializable {
 		spinnerEnd.valueProperty().addListener(listener);
 		spinnerStart.valueProperty().addListener(listener);
 		
-		cmbCourse.setItems(FXCollections.observableList(App.userSelection.copyCourses()));
+		cmbCourse.setItems(FXCollections.observableList(App.userSelection.copyList()));
 		cmbCourse.setOnAction(new EventHandler<ActionEvent>() {
 		    @Override
 		    public void handle(ActionEvent actionEvent) {
 		    	Course course = cmbCourse.getSelectionModel().getSelectedItem();
-		    	cmbSection.setItems(FXCollections.observableList(course.copySections()));
+		    	cmbSection.setItems(FXCollections.observableList(course.copyList()));
 		    }
 		});
 		//cmbCourse.setCellFactory(e -> new ComboBoxCourseCell());
@@ -186,7 +186,7 @@ public class AddEditClassTimeController implements javafx.fxml.Initializable {
 			
 			//Make sure this ClassTime does not conflict with any other ClassTime in this section.
 			Section section = cmbSection.getSelectionModel().getSelectedItem();
-			for (ClassTime time : section.copyClassTimes()) {
+			for (ClassTime time : section.copyList()) {
 				if (time.conflictsWith(newClassTime) && !time.equals(classTimeToEdit)) {
 					App.showNotification("This class time conflicts with another class time in this section.", AlertType.ERROR);
 					return;

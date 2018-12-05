@@ -25,7 +25,7 @@ public class AlgorithmV2 {
 		//Get total number of sections
 		int numSections = 0;
 		for (int i=0; i<courseList.getSize(); i++) {
-			numSections += courseList.getCourse(i).getSize();
+			numSections += courseList.getItem(i).getSize();
 		}
 		
 		//Arrays containing all the sections and their associated course name.
@@ -33,9 +33,9 @@ public class AlgorithmV2 {
 		String[] courseNames = new String[numSections];
 		int sectionIndex = 0;
 		for (int i=0; i<courseList.getSize(); i++) {
-			Course currentCourse = courseList.getCourse(i);
+			Course currentCourse = courseList.getItem(i);
 			for (int j=0; j<currentCourse.getSize(); j++, sectionIndex++) {
-				sections[sectionIndex] = currentCourse.getSection(j);
+				sections[sectionIndex] = currentCourse.getItem(j);
 				courseNames[sectionIndex] = currentCourse.getName();
 			}
 		}

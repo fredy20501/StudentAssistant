@@ -45,7 +45,7 @@ public class AlgorithmTester{
 	Course manySections=new Course("course1 (many sections)");
 	for(int x=0;x<5;x++){
 		manySections.add(new Section("section"+x+"A"));
-		manySections.getSection(x).add(new ClassTime("regular", new ArrayList<String>(Arrays.asList(days[x])),
+		manySections.getItem(x).add(new ClassTime("regular", new ArrayList<String>(Arrays.asList(days[x])),
 		LocalTime.parse(10+x+":00"), LocalTime.parse(11+x+":"+20)));
 	}
 	testSubjects.get(3).add(manySections);
@@ -170,9 +170,9 @@ LocalTime.parse("12:20"), LocalTime.parse("13:20")));
 				testSubjects.get(4).add(courses.get(x));
 			}
 		}
-		testSubjects.get(2).getCourse(2).getSection(0).add(classTimes.get(0));
-		testSubjects.get(2).getCourse(3).add(new Section("custom1"));
-		testSubjects.get(2).getCourse(3).getSection(0).add(classTimes.get(2));
+		testSubjects.get(2).getItem(2).getItem(0).add(classTimes.get(0));
+		testSubjects.get(2).getItem(3).add(new Section("custom1"));
+		testSubjects.get(2).getItem(3).getItem(0).add(classTimes.get(2));
 
 		for(int x=0;x<testSubjects.size();x++){
 			if(x<6 || x==7)

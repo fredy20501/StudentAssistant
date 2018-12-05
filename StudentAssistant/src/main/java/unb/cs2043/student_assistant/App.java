@@ -69,7 +69,7 @@ public class App extends Application
     	if (UNBCourseNames==null) {
     		UNBCourseNames = new TreeSet<>();
     		//Using a set to guarantee no duplicate
-        	for (Course course: UNBCourseList.copyCourses()) {
+        	for (Course course: UNBCourseList.copyList()) {
         		UNBCourseNames.add(course.getName());
         	}
     	}
@@ -83,7 +83,7 @@ public class App extends Application
     	if (UNBCourseFullNames==null) {
     		UNBCourseFullNames = new TreeSet<>();
     		//Using a set to guarantee no duplicate
-        	for (Course course: UNBCourseList.copyCourses()) {
+        	for (Course course: UNBCourseList.copyList()) {
         		UNBCourseFullNames.add(course.getName()+" - "+course.getFullName());
         	}
     	}

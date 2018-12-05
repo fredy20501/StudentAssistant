@@ -111,13 +111,13 @@ public class AddEditCourseController implements javafx.fxml.Initializable {
 			}
 			else {
 				//Check if a course already has that name
-				if (App.userSelection.getCourseByName(courseName)!=null) {
+				if (App.userSelection.getItemByName(courseName)!=null) {
 					App.showNotification("Course "+courseName+" already in the list.", AlertType.ERROR);
 					return;
 				}
 				Course newCourse;
 				if (App.isUNBCourse(courseName)) {
-					newCourse = App.UNBCourseList.getCourseByName(courseName);
+					newCourse = App.UNBCourseList.getItemByName(courseName);
 				}
 				else {
 					newCourse = new Course(courseName);
