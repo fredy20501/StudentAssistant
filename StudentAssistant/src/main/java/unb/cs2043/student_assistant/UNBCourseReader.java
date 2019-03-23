@@ -156,7 +156,9 @@ public class UNBCourseReader {
         		+ "[ \\t]((?:M|T|W|Th|F)+)(?:\\s+((?:M|T|W|Th|F)+))?\\s"	//Days 			(Ex: MWF)
 				+ "(\\d\\d:\\d\\d\\w\\w-\\d\\d:\\d\\d\\w\\w)"				//Time 			(Ex: 08:30AM-9:20AM)
 				+ "(?:\\s+(\\d\\d:\\d\\d\\w\\w-\\d\\d:\\d\\d\\w\\w))?\\s"	//Times ctnd
-				+ "([A-Z]+\\d+)(?:\\s+([A-Z]+\\d+))?");						//Locations 	(Ex: HC13)
+				+ "([A-Z]+\\d+)?(?:\\s+([A-Z]+\\d+))?");						//Locations 	(Ex: HC13)
+        //(Lab|Tutorial)\s[ \t]((?:M|T|W|Th|F)+)(?:\s+((?:M|T|W|Th|F)+))?\s(\d\d:\d\d\w\w-\d\d:\d\d\w\w)(?:\s+(\d\d:\d\d\w\w-\d\d:\d\d\w\w))?\s([A-Z]+\d+)?(?:\s+([A-Z]+\d+))?
+        
         //Patern for extra class times (labs and tutorials)
         Pattern classTimeRowPattern = 
         		Pattern.compile("(Lab|Tutorial)\\s"				//Type			(Ex: Lab)
